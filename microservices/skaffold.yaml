@@ -1,0 +1,33 @@
+apiVersion: skaffold/v4beta1
+kind: Config
+metadata:
+  name: master-skaffold-k-s
+build:
+  artifacts:
+    - image: yasniel1408/bff
+      context: bff
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - dest: .
+            src: "**/*.js"
+    - image: yasniel1408/service1
+      context: service1
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - dest: .
+            src: "**/*.js"
+    - image: yasniel1408/service2
+      context: service2
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - dest: .
+            src: "**/*.js"
+manifests:
+  rawYaml:
+    - infra/k8s/*

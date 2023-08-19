@@ -13,3 +13,7 @@ skaffold dev
 ## Para eliminar la infra del cluster
 
 skaffold delete
+
+
+# vHost
+sudo nano /private/etc/hosts

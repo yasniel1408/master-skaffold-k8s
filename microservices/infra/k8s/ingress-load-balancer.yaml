@@ -1,0 +1,28 @@
+# https://kubernetes.io/docs/concepts/services-networking/ingress/
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-load-balancer
+  namespace: default
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/use-regex: "true"
+spec:
+  rules:
+    - host: devfast.com
+      http:
+        paths:
+          # - path: /api/orders/?(.*)
+          #   pathType: Prefix
+          #   backend:
+          #     service:
+          #       name: orders-service
+          #       port:
+          #         number: 3000
+          - path: /?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: bff-service
+                port:
+                  number: 3000
