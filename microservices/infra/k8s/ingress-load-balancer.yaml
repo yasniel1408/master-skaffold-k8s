@@ -12,11 +12,11 @@ spec:
     - host: devfast.com
       http:
         paths:
-          # - path: /api/orders/?(.*)
+          # - path: /api/s1/?(.*)
           #   pathType: Prefix
           #   backend:
           #     service:
-          #       name: orders-service
+          #       name: service1-service
           #       port:
           #         number: 3000
           - path: /?(.*)

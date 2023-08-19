@@ -4,17 +4,21 @@ const express = require("express"),
   app = express(),
   puerto = 3000;
 
-app.get("/", async (_req, res) => {
-  res.send("BFF TEST");
+app.get("/", (_req, res) => {
+  res.send("BFF");
 });
 
-app.get("/service1", async (_req, res) => {
-  const response = await axios.get("http://localhost:3000");
+app.get("/s1", async (_req, res) => {
+  const response = await axios.get(
+    "http://service1-service.default.svc.cluster.local:3000"
+  );
   res.send(response.data);
 });
 
-app.get("/service2", async (_req, res) => {
-  const response = await axios.get("http://localhost:3001");
+app.get("/s2", async (_req, res) => {
+  const response = await axios.get(
+    "http://service2-service.default.svc.cluster.local:3000"
+  );
   res.send(response.data);
 });
 

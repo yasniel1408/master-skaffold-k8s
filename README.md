@@ -14,6 +14,10 @@ skaffold dev
 
 skaffold delete
 
+## Para el CI/CD
+
+skaffold run
+
 
 # vHost
 sudo nano /private/etc/hosts

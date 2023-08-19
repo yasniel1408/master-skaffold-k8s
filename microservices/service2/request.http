@@ -1,2 +1,2 @@
-GET http://localhost:3001 HTTP/1.1
+GET http://devfast.com/s2 HTTP/1.1
 Content-Type: application/json
