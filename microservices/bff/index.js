@@ -5,7 +5,7 @@ const express = require("express"),
   puerto = 3000;
 
 app.get("/", (_req, res) => {
-  res.send("BFF");
+  res.send("Este es nuestro BFF");
 });
 
 app.get("/s1", async (_req, res) => {

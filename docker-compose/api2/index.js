@@ -4,7 +4,7 @@ const express = require("express"),
 
 app.get("/", (peticion, respuesta) => {
   let agenteDeUsuario = peticion.header("user-agent");
-  respuesta.send("API 2222 :" + agenteDeUsuario);
+  respuesta.send("API 2 :" + agenteDeUsuario);
 });
 
 app.listen(puerto, (err) => {

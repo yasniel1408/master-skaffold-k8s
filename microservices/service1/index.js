@@ -4,6 +4,7 @@ const express = require("express"),
 
 app.get("/", (peticion, respuesta) => {
   let agenteDeUsuario = peticion.header("user-agent");
+  console.log("SERVICE 1 debugendo con skaffold");
   respuesta.send("SERVICE 1 :" + agenteDeUsuario);
 });
 
